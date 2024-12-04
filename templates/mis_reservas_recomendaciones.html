@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reservas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mis_reservas.css') }}">
+    <script>
+        function imprimirBoleto(reservaId) {
+            // Obtiene el contenido del boleto de la recomendación seleccionada
+            const content = document.getElementById(reservaId).innerHTML;
+            const newWindow = window.open('', '_blank');
+            newWindow.document.write('<html><head><title>Imprimir Boleto</title></head><body>');
+            newWindow.document.write(content);
+            newWindow.document.write('</body></html>');
+            newWindow.document.close();
+            newWindow.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mis Reservas de Recomendaciones</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Reserva</th>
+                    <th>Título</th>
+                    <th>Salida</th>
+                    <th>Llegada</th>
+                    <th>Fecha Salida</th>
+                    <th>Fecha Llegada</th>
+                    <th>Precio</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reserva in reservas %}
+                <tr>
+                    <td>{{ reserva.reserva_id }}</td>
+                    <td>{{ reserva.titulo }}</td>
+                    <td>{{ reserva.salida }}</td>
+                    <td>{{ reserva.llegada }}</td>
+                    <td>{{ reserva.fecha_salida }}</td>
+                    <td>{{ reserva.fecha_llegada }}</td>
+                    <td>${{ reserva.precio }}</td>
+                    <td>
+                        <!-- Botón para imprimir el boleto -->
+                        <button onclick="imprimirBoleto('boleto_{{ reserva.reserva_id }}')" class="btn">Imprimir Boleto</button>
+                    </td>
+                </tr>
+                <!-- Detalles del boleto (ocultos para la impresión) -->
+                <div id="boleto_{{ reserva.reserva_id }}" style="display: none;">
+                    <h2>Boleto de Reserva - {{ reserva.titulo }}</h2>
+                    <p><strong>Origen:</strong> {{ reserva.salida }}</p>
+                    <p><strong>Destino:</strong> {{ reserva.llegada }}</p>
+                    <p><strong>Fecha de Salida:</strong> {{ reserva.fecha_salida }}</p>
+                    <p><strong>Hora de Salida:</strong> {{ reserva.hora_salida }}</p>
+                    <p><strong>Fecha de Llegada:</strong> {{ reserva.fecha_llegada }}</p>
+                    <p><strong>Hora de Llegada:</strong> {{ reserva.hora_llegada }}</p>
+                    <p><strong>Asiento:</strong> {{ reserva.asiento_id }}</p>
+                    <p><strong>Precio:</strong> ${{ reserva.precio }}</p>
+                </div>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="actions">
+            <!-- Botón para regresar a la página de recomendaciones -->
+            <a href="{{ url_for('app_routes.ver_recomendaciones') }}" class="btn">Volver a Recomendaciones</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Recomendación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='detalle_recomendacion.css') }}">
+</head>
+<body>
+    <div class="detalle-container">
+        <h1>{{ recomendacion.titulo }}</h1>
+        <img src="{{ url_for('static', filename='uploads/' + recomendacion.imagen_url) }}" alt="{{ recomendacion.titulo }}">
+        <p>{{ recomendacion.descripcion }}</p>
+        <p><strong>Destino:</strong> {{ recomendacion.llegada }}</p>
+        <p><strong>Fecha de salida:</strong> {{ recomendacion.fecha_salida }}</p>
+        <p><strong>Hora de salida:</strong> {{ recomendacion.hora_salida }}</p>
+        <p><strong>Fecha de llegada:</strong> {{ recomendacion.fecha_llegada }}</p>
+        <p><strong>Hora de llegada:</strong> {{ recomendacion.hora_llegada }}</p>
+        <p><strong>Precio:</strong> ${{ recomendacion.precio }}</p>
+
+        <form method="POST">
+            <label for="lugar_salida">Lugar de salida:</label>
+            <input type="text" id="lugar_salida" name="lugar_salida" required>
+            <label for="asiento_id">Número de asiento:</label>
+            <input type="text" id="asiento_id" name="asiento_id" required>
+            <button type="submit" class="btn">Reservar</button>
+        </form>
+
+        <div class="actions">
+            <a href="{{ url_for('app_routes.ver_recomendaciones') }}" class="btn">Cancelar</a>
+        </div>
+    </div>
+</body>
+</html>
+    

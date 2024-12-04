@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f7; /* Suave color pastel */
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #3a6351; /* Verde pastel */
+}
+
+/* Container Styles */
+.detalle-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fcefee; /* Rosa pastel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.detalle-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Text Styles */
+.detalle-container p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #6b705c; /* Gris suave */
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1em;
+    color: #3d5a80; /* Azul pastel */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #98c1d9; /* Azul claro */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #3d5a80; /* Azul más oscuro */
+    box-shadow: 0 0 5px #3d5a80;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #98c1d9; /* Azul claro */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #3d5a80; /* Azul más oscuro */
+    transform: scale(1.05);
+}
+
+/* Cancel Button */
+.btn:nth-child(2) {
+    background-color: #ffcad4; /* Rosa pastel */
+}
+
+.btn:nth-child(2):hover {
+    background-color: #f67280; /* Rosa más intenso */
+}

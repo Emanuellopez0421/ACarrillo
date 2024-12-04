@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f7; /* Suave color pastel */
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3a6351; /* Verde pastel */
+}
+
+/* Card Styles */
+.card {
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fcefee; /* Rosa pastel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    color: #3d5a80; /* Azul pastel */
+    margin: 10px 0;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #6b705c; /* Gris suave */
+    font-size: 1em;
+}
+
+/* Button Styles */
+.card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #98c1d9; /* Azul claro */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #3d5a80; /* Azul más oscuro */
+    transform: scale(1.05);
+}
+
+/* Button Navigation */
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #ffcad4; /* Rosa pastel */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navigation a:hover {
+    background-color: #f67280; /* Rosa más intenso */
+    transform: translateY(-2px);
+}
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
